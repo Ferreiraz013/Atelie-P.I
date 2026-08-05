@@ -125,10 +125,6 @@ button:hover {
     color: var(--botao);
 }
 
-/*==============================
-DIVISOR
-==============================*/
-
 .divider {
 
     display: flex;
@@ -154,10 +150,6 @@ DIVISOR
     margin: 0 15px;
 
 }
-
-/*==============================
-LOGIN SOCIAL
-==============================*/
 
 .social-login {
 

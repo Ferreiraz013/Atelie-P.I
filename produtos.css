@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+/* ==========================
+        CORES DO SITE
+========================== */
+
+:root{
+
+    --bg-principal:#F3EAF4;
+
+    --cabecalho:#4D1F62;
+
+    --roxo-texto:#32154A;
+
+    --cards:#CFAEDC;
+
+    --botao:#C8A35A;
+
+    --botao-hover:#B38E47;
+
+    --branco:#FFFFFF;
+
+    --textinho:#4A4A4A;
+
+    --borda:#E8D7EC;
+
+    --sombra:rgba(77,31,98,.12);
+
+    --transition:.3s ease;
+
+}
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    background:var(--bg-principal);
+
+    font-family:"Montserrat",sans-serif;
+
+    color:var(--textinho);
+
+}
+
+.container{
+
+    width:min(1200px,90%);
+
+    margin:auto;
+
+}  
+
+.produtos{
+
+    padding:70px 0;
+
+}
+
+.titulo{
+
+    background:linear-gradient(135deg,var(--cabecalho),var(--roxo-texto));
+
+    padding:60px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    margin-bottom:50px;
+
+    box-shadow:0 15px 35px var(--sombra);
+
+}
+
+.titulo span{
+
+    color:var(--botao);
+
+    text-transform:uppercase;
+
+    letter-spacing:3px;
+
+    font-weight:700;
+
+}
+
+.titulo h1{
+
+    color:var(--branco);
+
+    font-size:3rem;
+
+    margin:15px 0;
+
+    font-family:"Playfair Display",serif;
+
+}
+
+.titulo p{
+
+    color:var(--branco);
+
+    max-width:700px;
+
+    margin:auto;
+
+}
+
+.pesquisa{
+
+    margin:40px 0;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.pesquisa input{
+
+    width:100%;
+
+    max-width:600px;
+
+    padding:15px 20px;
+
+    border:none;
+
+    border-radius:12px;
+
+    outline:none;
+
+    font-size:16px;
+
+    box-shadow:0 5px 15px var(--sombra);
+
+}
+
+.categorias{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:50px;
+
+}
+
+.categorias button{
+
+    background:var(--cabecalho);
+
+    color:white;
+
+    border:none;
+
+    padding:12px 25px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.categorias button:hover{
+
+    background:var(--botao);
+
+}
