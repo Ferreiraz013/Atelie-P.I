@@ -1,26 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
 
 :root {
     --bg-principal: #F3EAF4;
 
     --cabecalho: #4D1F62;
     --roxo-texto: #32154A;
+    --cards: #CFAEDC;
 
     --botao: #C8A35A;
     --botao-hover: #B38E47;
 
     --branco: #FFF;
-    --borda: #E8D7EC;
-
     --textinho: #4A4A4A;
 
+    --borda: #E8D7EC;
     --sombra: rgba(77, 31, 98, .12);
+
+    --transition: .3s ease;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -30,6 +36,27 @@ body {
     align-items: center;
     background: var(--bg-principal);
     font-family: "Montserrat", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Playfair Display", serif;
+    color: var(--roxo-texto);
+    margin-bottom: 15px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
 }
 
 .login-container {
@@ -42,33 +69,53 @@ body {
 .login-card {
     width: 100%;
     max-width: 400px;
-    background: white;
+    background: var(--branco);
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0 10px 25px var(--sombra);
     text-align: center;
 }
 
-.logo {
-    width: 100px;
-    border-radius: 50%;
-    margin-bottom: 20px;
+.cadastro-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
-h1 {
-    font-family: "Playfair Display", serif;
-    color: var(--roxo-texto);
-    margin-bottom: 10px;
+.cadastro-card {
+    width: 100%;
+    max-width: 480px;
+    background: var(--branco);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 25px var(--sombra);
+    text-align: center;
 }
 
-p {
-    color: var(--textinho);
-    margin-bottom: 25px;
+.recuperar-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.recuperar-card {
+    width: 100%;
+    max-width: 420px;
+    background: var(--branco);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px var(--sombra);
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
 
 .input-box {
     position: relative;
-    margin-bottom: 20px;
 }
 
 .input-box i {
@@ -77,6 +124,7 @@ p {
     top: 50%;
     transform: translateY(-50%);
     color: var(--cabecalho);
+    font-size: 18px;
 }
 
 .input-box input {
@@ -86,6 +134,7 @@ p {
     border-radius: 10px;
     padding-left: 45px;
     outline: none;
+    transition: var(--transition);
     font-size: 15px;
 }
 
@@ -93,127 +142,133 @@ p {
     border-color: var(--botao);
 }
 
+.checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.checkbox input {
+    margin-top: 4px;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+    color: #888;
+    font-size: 14px;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--borda);
+}
+
+.divider span {
+    margin: 0 15px;
+}
+
+.social-login {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+}
+
+.social-btn {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    text-decoration: none;
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    color: var(--cabecalho);
+    font-size: 24px;
+    transition: var(--transition);
+    box-shadow: 0 5px 12px var(--sombra);
+}
+
+.social-btn:hover {
+    transform: translateY(-5px);
+}
+
 button {
-    width: 100%;
-    height: 50px;
-    border: none;
-    border-radius: 10px;
     background: var(--botao);
     color: white;
-    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 30px;
     cursor: pointer;
-    transition: .3s;
+    font-size: 16px;
+    font-weight: 600;
+    transition: var(--transition);
 }
 
 button:hover {
     background: var(--botao-hover);
+    transform: translateY(-3px);
+}
+
+.google:hover {
+    background: #DB4437;
+    color: #fff;
+}
+
+.facebook:hover {
+    background: #1877F2;
+    color: #fff;
+}
+
+.instagram:hover {
+    background: #E4405F;
+    color: #fff;
 }
 
 .links {
-    margin-top: 20px;
+    margin-top: 25px;
     display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.login-card .links {
     justify-content: space-between;
 }
 
 .links a {
     color: var(--cabecalho);
     text-decoration: none;
+    font-weight: 600;
     font-size: 14px;
+    transition: var(--transition);
 }
 
 .links a:hover {
     color: var(--botao);
 }
 
-.divider {
-
-    display: flex;
-    align-items: center;
-    margin: 30px 0;
-    color: #888;
-    font-size: 14px;
-
-}
-
-.divider::before,
-.divider::after {
-
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: var(--borda);
-
-}
-
-.divider span {
-
-    margin: 0 15px;
-
-}
-
-.social-login {
-
-    display: flex;
-    justify-content: center;
-    gap: 18px;
-
-}
-
-.social-btn {
-
-    width: 55px;
-    height: 55px;
-
+main {
+    margin-left: 0;
+    padding-left: 0;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    border-radius: 50%;
-    text-decoration: none;
-
-    font-size: 24px;
-
-    background: white;
-
-    border: 1px solid var(--borda);
-
-    color: var(--cabecalho);
-
-    transition: .3s;
-
-    box-shadow: 0 5px 12px var(--sombra);
-
 }
 
-.social-btn:hover {
+@media(max-width:480px) {
 
-    transform: translateY(-5px);
-
-}
-
-/* Instagram */
-
-.instagram:hover {
-
-    background: #e44092;
-    color: white;
-
-}
-
-/* Google */
-
-.google:hover {
-
-    background: #DB4437;
-    color: white;
-
-}
-
-/* Facebook */
-
-.facebook:hover {
-
-    background: #1877F2;
-    color: white;
-
+    .login-card,
+    .cadastro-card,
+    .recuperar-card {
+        padding: 30px 25px;
+    }
 }
