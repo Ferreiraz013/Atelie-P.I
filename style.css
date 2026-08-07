@@ -66,6 +66,7 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    flex: 1;
 }
 
 .menu a {
@@ -159,6 +160,28 @@ button:hover {
     transform: translateY(-3px);
 }
 
+.btn-sair {
+    margin-top: auto;
+    width: 100%;
+    padding: 15px 18px;
+    background: var(--botao);
+    color: var(--branco);
+    text-decoration: none;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.btn-sair:hover {
+    background: var(--botao-hover);
+    color: var(--branco);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(200, 163, 90, 0.35);
+}
+
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -175,6 +198,60 @@ button:hover {
 
 .card button {
     margin-top: 15px;
+}
+
+#servicos_main {
+    align-content: center;
+    padding: 5%;
+    padding-top: 30px;
+    display: flexbox;
+}
+
+#servicos_main h1 {
+    padding: 0;
+}
+
+.servicos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.card_servicos {
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    box-shadow: 0 10px 20px var(--sombra);
+    padding: 25px;
+}
+
+.card_servicos:hover {
+    transform: translateY(-5px);
+    transition: var(--transition);
+}
+
+.overlay {
+    position: relative;
+    width: auto;
+    padding: 10px 0px;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+    background-color: #32154ac9;
+    border-radius: 10px;
+}
+
+.card_servicos:hover .overlay {
+    opacity: 1;
+}
+
+.card_servicos img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 footer {
