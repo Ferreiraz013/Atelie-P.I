@@ -89,9 +89,9 @@
 
             <a href="index.html" class="voltar-link">
 
-            <i class="bi bi-arrow-left"></i>
+                <i class="bi bi-arrow-left"></i>
 
-            Voltar para a página inicial
+                Voltar para a página inicial
 
         </div>
 
@@ -99,7 +99,7 @@
 
     <div class="video-stage hidden" id="videoStage" aria-live="polite">
         <video id="loginVideo" autoplay muted playsinline>
-            <source src="video - logo/Animated_brand_logo_reveal_202608172139.mp4" type="video/mp4">
+            <source src="./video - logo/Animated_brand_logo_reveal_202608181915.mp4" type="video/mp4">
             Seu navegador não suporta vídeo HTML5.
         </video>
     </div>
@@ -121,11 +121,21 @@
             loginContainer.classList.add('hidden');
             videoStage.classList.remove('hidden');
             loginVideo.currentTime = 0;
-            loginVideo.play();
+
+            loginVideo.play().catch(function () {
+                videoStage.classList.add('hidden');
+                loginContainer.classList.remove('hidden');
+            });
         });
 
         loginVideo.addEventListener('ended', function () {
             window.location.href = 'index.html';
+        });
+
+        loginVideo.addEventListener('error', function () {
+            console.error('Erro ao carregar o vídeo de login.');
+            videoStage.classList.add('hidden');
+            loginContainer.classList.remove('hidden');
         });
     </script>
 

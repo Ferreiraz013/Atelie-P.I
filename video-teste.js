@@ -1,29 +1,44 @@
 const botaoTeste = document.getElementById("botaoTeste");
 const videoStage = document.getElementById("videoStage");
-const video = document.getElementById("video");
+const loginVideo = document.getElementById("loginVideo");
+
 
 botaoTeste.addEventListener("click", function () {
 
-    // Esconde o botão
+    console.log("Botão clicado.");
+
+    videoStage.classList.remove("hidden");
     botaoTeste.classList.add("hidden");
 
-    // Mostra o vídeo
-    videoStage.classList.remove("hidden");
+    loginVideo.currentTime = 0;
 
-    // Começa o vídeo do início
-    video.currentTime = 0;
+    loginVideo.play()
+        .then(function () {
 
-    // Reproduz o vídeo
-    video.play();
+            console.log("Vídeo iniciado com sucesso.");
+
+        })
+        .catch(function (erro) {
+
+            console.error("Erro ao reproduzir o vídeo:", erro);
+
+        });
+
 });
 
-// Quando o vídeo terminar
-video.addEventListener("ended", function () {
 
-    // Esconde o vídeo
+loginVideo.addEventListener("ended", function () {
+
+    console.log("Vídeo terminou.");
+
     videoStage.classList.add("hidden");
-
-    // Mostra novamente o botão
     botaoTeste.classList.remove("hidden");
+
+});
+
+
+loginVideo.addEventListener("error", function () {
+
+    console.error("Erro ao carregar o vídeo.");
 
 });
